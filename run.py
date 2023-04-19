@@ -4,12 +4,7 @@ import random
 
 def main():
     # User defined arguments
-    # cfg = 'teeth_unet_fold_1_crop.yaml'
-    # cfg = 'teeth_unet_fold_1_crop.yaml'
-    # cfg = 'thigh_fl_contra_teacher_full_ssup.yaml'
-    # cfg = 'thigh_fl_exclude_unlabeled_slices_test.yaml'
-    # cfg = 'myothigh_range04_full_ssup.yaml'
-    cfg = 'myothigh_range04_contra_teacher_smooth.yaml'
+    cfg = 'thigh_fl_contra_teacher_full_ssup.yaml'
     gpu_id = '2'
     num_gpus = len(gpu_id.split(','))
     # Prepare command
