@@ -1,0 +1,14 @@
+base: ['thigh_full_label.yaml']
+model:
+    kind: UNetContraTeacher
+    kwargs:
+        alpha: 0.95
+        rampup_length: 2500
+        consist_loss_name: mse
+        ssup_range: ['label', 'unlabel']
+        proj_size: 32
+        pseudo_thres: 0.99
+dataset:
+    kind: SSupDataset
+    kwargs:
+        mask_type: valid_slice

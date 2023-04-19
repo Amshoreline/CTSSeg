@@ -1,0 +1,17 @@
+base: ['base.yaml']
+model:
+    kwargs:
+        infer_size: [64, 224, 224]
+        num_classes: 11
+dataset:
+    txt_dir: ''
+    train_txts: [[25, 'train.txt'], ]
+    eval_txts: [[1, 'test.txt'], ]
+    train_batch_size: 2
+    kwargs:
+        data_type: MRI
+        dummy_2D_aug: True
+        out_shape: [64, 224, 224]
+        data_in_memory: False
+metric:
+    num_classes: 10
