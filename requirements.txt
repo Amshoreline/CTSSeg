@@ -1,3 +1,4 @@
+torch
 pyyaml
 addict
 tensorboard
