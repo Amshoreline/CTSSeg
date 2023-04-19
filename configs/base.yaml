@@ -1,0 +1,39 @@
+base: []
+seed: 223
+use_fp16: False
+model:
+    kind: UNet
+    resume:
+    sync_bn: True
+    kwargs:
+        in_channels: 1
+        num_classes: 2
+        infer_size: [96, 160, 160]
+dataset:
+    kind: VanillaDataset
+    txt_dir: ''
+    train_txts: [[1, 'fold_0.txt'], [1, 'fold_1.txt']]
+    eval_txts: [[1, 'fold_2.txt'], ]
+    train_batch_size: 2
+    eval_batch_size: 1
+    num_workers: 2
+    kwargs:
+        data_type: CT
+        data_in_memory: True
+        dataset_size: -1
+        out_shape: [96, 160, 160]
+trainer:
+    save_freq: 1
+    test_freq: 1
+    optimizer:
+        kind: Adam
+        kwargs: {}
+    lr_schedule:
+        start_warmup: 0.0
+        warmup_epochs: 1
+        base_lr: 0.00_01
+        final_lr: 0.0
+        cosine_epochs: 9
+        cosine_times: 1
+metric:
+    num_classes: 1
