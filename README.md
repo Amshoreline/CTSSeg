@@ -1,5 +1,6 @@
 # CTSSeg
 
+## How to use
 1. Prepare text file by:
 
 ```
@@ -27,3 +28,10 @@ dataset:
 You can refer to configs/base.yaml and configs/thigh_full_label.yaml when writing your own config.
 
 3. python main.py --config_file {config_file_path}
+
+## For reproduction
+The train/test split is orgin from [SASSNet](https://github.com/kleinzcy/SASSnet)
+
+1. Train with labeled data only for 25,000 iterations.
+
+2. Train with labeled data and unlabeled data simultaneously from the pretrained model in step 1.
