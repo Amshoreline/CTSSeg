@@ -1,4 +1,6 @@
-# CTSSeg
+# CTSSeg: Consistent Teacher-Student model for magnetic resonance image Segmentation
+
+> C. Zhang, Q. He, K. Yan, M. Ma, D. Liu and P. Wang, "CTSSeg: Consistent Teacher-Student model for magnetic resonance image Segmentation," 2023 IEEE International Conference on Multimedia and Expo (ICME), Brisbane, Australia, 2023, pp. 2351-2356, doi: 10.1109/ICME55011.2023.00401.
 
 ## How to use
 1. Prepare text file by:
@@ -33,6 +35,6 @@ You can refer to configs/base.yaml and configs/thigh_full_label.yaml when writin
 
 The train/test split is origin from [SASSNet](https://github.com/kleinzcy/SASSnet)
 
-1. Train with labeled data only for 25,000 iterations.
+1. Pretrain model with labeled data only for 25,000 iterations.
 
-2. Train with labeled data and unlabeled data simultaneously from the pretrained model in step 1.
+2. Load the pretrained model from step 1, finetune the model with labeled data and unlabeled data simultaneously for 25,000 iterations.
